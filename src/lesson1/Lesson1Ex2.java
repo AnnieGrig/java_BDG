@@ -9,7 +9,7 @@ public class Lesson1Ex2 {
         int x = scanner.nextInt();
         System.out.print("Enter second number: ");
         int y = scanner.nextInt();
-        System.out.println(x + y);
+        System.out.println(x + "+" + y + "=" + (x + y));
 
 
     }

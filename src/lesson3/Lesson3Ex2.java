@@ -1,15 +1,16 @@
 package lesson3;
 
+import java.util.Scanner;
+
 public class Lesson3Ex2 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number : ");
+        int number = sc.nextInt();
         int sum = 0;
-        System.out.println("For number 20 : ");
-
-
-        for (int i = 1; i <= 20; i++)
-            {
-                sum += i;
-            }
+        for (int i = 1; i <= number; i++) {
+            sum += i;
+        }
         {
             System.out.println("Sum = " + sum);
         }

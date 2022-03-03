@@ -9,7 +9,7 @@ public class Lesson2Ex3 {
         double a = sc.nextDouble();
         System.out.println("Please enter second number");
         double b = sc.nextDouble();
-                if (a >= 0 & a <= 1 && b >=0 & b <= 1) {
+        if (a >= 0 && a <= 1 && b >= 0 && b <= 1) {
             System.out.println("True");
         } else {
             System.out.println("False");

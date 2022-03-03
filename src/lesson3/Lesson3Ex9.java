@@ -13,7 +13,7 @@ public class Lesson3Ex9 {
         for (int i = num; i > 0; i--) {
             sum *= i;
         }
-            System.out.println(sum);
+        System.out.println(sum);
 
     }
 }

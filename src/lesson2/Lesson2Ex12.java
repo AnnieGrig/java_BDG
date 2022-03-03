@@ -15,16 +15,24 @@ public class Lesson2Ex12 {
         String a = symbolScaner.nextLine();
         char symbol = a.charAt(0);
 
-        if (symbol == '*') {
-            System.out.println(x * y);
-        }   else if (symbol == '/' && y == 0) {
+        switch (symbol) {
+            case '*':
+                System.out.println(x * y);
+                break;
+            case '/':
+                System.out.println(x / y);
+                break;
+            case '-':
+                System.out.println(x - y);
+                break;
+            case '+':
+                System.out.println(x + y);
+                break;
+        }
+
+        if (symbol == '/' && y == 0) {
             System.out.println("Can't divide by zero");
-        }   else if (symbol == '/') {
-            System.out.println(x / y);
-        }   else if (symbol == '-') {
-            System.out.println(x - y);
-        }   else if (symbol == '+') {
-            System.out.println(x + y);
+
         }
     }
-    }
+}

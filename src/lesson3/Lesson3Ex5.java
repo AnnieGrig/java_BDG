@@ -12,11 +12,11 @@ public class Lesson3Ex5 {
         int sum = 0;
         for (int i = x; i <= y; i++) {
             if (i % 9 == 0) {
-                System.out.print( i + " ");
+                System.out.print(i + " ");
                 sum += i;
             }
         }
 
-        System.out.println("\nSum = " + sum);
+        System.out.println("Sum = " + sum);
     }
 }

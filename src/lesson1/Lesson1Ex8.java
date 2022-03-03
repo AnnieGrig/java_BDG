@@ -1,8 +1,12 @@
 package lesson1;
 
+import java.util.Scanner;
+
 public class Lesson1Ex8 {
     public static void main(String[] args) {
-        float radius = 7.5f;
+        System.out.println("Enter the radius:");
+        Scanner sc = new Scanner(System.in);
+        float radius = sc.nextFloat();
         final double pi = Math.PI;
         double resultperimeter = 2 * pi * radius;
         System.out.println("Perimeter is = " + resultperimeter);

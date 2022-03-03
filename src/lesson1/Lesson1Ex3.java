@@ -9,6 +9,6 @@ public class Lesson1Ex3 {
         double x = scanner.nextDouble();
         System.out.print("Enter second number: ");
         int y = scanner.nextInt();
-        System.out.println(x / y);
+        System.out.println(x + "/" + y + "=" + (x / y));
     }
-    }
+}
