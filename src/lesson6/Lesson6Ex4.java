@@ -26,3 +26,4 @@ public class Lesson6Ex4 {
         System.out.println(rotatedWord);
     }
 }
+

@@ -22,3 +22,4 @@ public class Lesson6Ex2 {
         System.out.println("The number of words is: " + wordsNum);
     }
 }
+

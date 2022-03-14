@@ -14,3 +14,4 @@ public class Lesson5Ex5 {
         System.out.println(searched + " occurs in array " + sum + " times");
     }
 }
+

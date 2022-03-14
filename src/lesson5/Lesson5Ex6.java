@@ -15,3 +15,4 @@ public class Lesson5Ex6 {
         System.out.println("Min is: " + min + "\nMax is: " + max);
     }
 }
+

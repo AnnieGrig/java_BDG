@@ -16,4 +16,3 @@ public class Lesson5Ex7 {
         }
     }
 }
-

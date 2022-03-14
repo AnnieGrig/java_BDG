@@ -14,3 +14,4 @@ public class Lesson5Ex10 {
         System.out.println(k + " occures in array " + counter + " time");
     }
 }
+
