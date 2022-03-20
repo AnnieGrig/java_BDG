@@ -7,22 +7,13 @@ public class Lesson6Ex3 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input a string: ");
         String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder(str);
+        StringBuilder rev = sb.reverse();
 
-        int strLastIndex = str.length() - 1;
-        boolean isPalidrome = true;
-
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(strLastIndex)) {
-                isPalidrome = false;
-                break;
-            }
-            strLastIndex--;
-        }
-        if (isPalidrome) {
-            System.out.println(str + " word is palidrome");
+        if (str.equals(rev.toString())) {
+            System.out.println(str + " word is palindrome");
         } else {
-            System.out.println(str + " word is not palidrome");
+            System.out.println(str + " word is not palindrome");
         }
     }
 }
-

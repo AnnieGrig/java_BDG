@@ -8,6 +8,7 @@ public class Lesson5Ex3 {
         for (int i = 0; i < seasons.length; i++) {
             if (rain == seasons[i]) {
                 isFound = true;
+                return;
             }
         }
 

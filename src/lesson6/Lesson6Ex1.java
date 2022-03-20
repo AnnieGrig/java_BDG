@@ -2,7 +2,8 @@ package lesson6;
 
 import java.util.Scanner;
 
-public class Lesson6Ex1 {
+public class
+Lesson6Ex1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input a string: ");

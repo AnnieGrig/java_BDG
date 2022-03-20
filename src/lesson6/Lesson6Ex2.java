@@ -9,17 +9,8 @@ public class Lesson6Ex2 {
         String str = sc.nextLine();
         int wordsNum = 0;
 
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == ' ') {
-                wordsNum++;
-            }
-        }
+        String[] divided = str.split(" ");
 
-        if (str.charAt(str.length() - 1) != ' ') {
-            wordsNum++;
-        }
-
-        System.out.println("The number of words is: " + wordsNum);
+        System.out.println("The number of words is: " + divided.length);
     }
 }
-

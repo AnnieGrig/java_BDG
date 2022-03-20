@@ -11,10 +11,11 @@ public class Lesson6Ex5 {
         String str2 = sc.nextLine();
         boolean isEqual = false;
 
-        if ((str1.length() == str2.length()) &&
-                ((str1 + str1).indexOf(str2) != -1)) {
+        String str3 = str1 + str1;
+        if (str3.contains(str2))
             isEqual = true;
-        }
+        else
+            isEqual = false;
 
         if (isEqual) {
             System.out.println(str1 + " is a rotation");

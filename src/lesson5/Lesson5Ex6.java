@@ -1,8 +1,18 @@
 package lesson5;
 
+import java.util.Scanner;
+
 public class Lesson5Ex6 {
     public static void main(String[] args) {
-        int[] arr = {8, 6, 9, 253, 28, -6, 65, 3};
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input array size: ");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        System.out.println("Input array elements: ");
+        for (int i = 0; i < arr.length; i ++) {
+            System.out.print("Input array " + i + ":");
+            arr[i] = sc.nextInt();
+        }
         int max = arr[0];
         int min = arr[0];
         for (int i = 1; i < arr.length; i++) {
