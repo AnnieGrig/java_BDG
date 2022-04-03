@@ -7,7 +7,6 @@ public class Lesson6Ex2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input a sentence: ");
         String str = sc.nextLine();
-        int wordsNum = 0;
 
         String[] divided = str.split(" ");
 
