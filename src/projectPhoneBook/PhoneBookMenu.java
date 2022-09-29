@@ -94,16 +94,23 @@ public class PhoneBookMenu {
         Scanner scan = new Scanner(System.in);
         switch (scan.nextInt()) {
             case 1:
+                System.out.println("Enter new name: ");
+                scan = new Scanner(System.in);
                 String newName = scan.nextLine();
                 contact.setName(newName);
                 contact = phonebook.update(contact);
                 break;
             case 2:
+                System.out.println("Enter new phone number: ");
+                scan = new Scanner(System.in);
                 String newPhoneNumber = scan.nextLine();
                 contact.setPhoneNumber(newPhoneNumber);
                 contact = phonebook.update(contact);
                 break;
+
             case 3:
+                System.out.println("Enter new email address: ");
+                scan = new Scanner(System.in);
                 String newEmailAddress = scan.nextLine();
                 contact.setEmailAddress(newEmailAddress);
                 contact = phonebook.update(contact);
