@@ -1,16 +1,17 @@
 package project_phone_book;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Contact {
     private static int counter = 1;
 
     private String name;
-    private String phoneNumber;
+    private HashMap<PhoneNumberType, Integer> phoneNumber;
     private String emailAddress;
     private int contactID;
 
-    public Contact(String name, String phoneNumber, String emailAddress) {
+    public Contact(String name, HashMap<PhoneNumberType, Integer> phoneNumber, String emailAddress) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.emailAddress = emailAddress;
@@ -18,7 +19,7 @@ public class Contact {
         counter++;
     }
 
-    public Contact(String name, String phoneNumber) {
+    public Contact(String name, HashMap<PhoneNumberType, Integer> phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.contactID = counter;
@@ -33,11 +34,11 @@ public class Contact {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
+    public HashMap<PhoneNumberType, Integer> getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(HashMap<PhoneNumberType, Integer> phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

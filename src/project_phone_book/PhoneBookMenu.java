@@ -1,5 +1,6 @@
 package project_phone_book;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class PhoneBookMenu {
@@ -49,7 +50,7 @@ public class PhoneBookMenu {
             System.out.println("If you like to exit push enter, otherwise write [No]");
             scan = new Scanner(System.in);
 
-            if (scan.nextLine().isEmpty()) {
+            if (scan.next().isEmpty()) {
                 exit = true;
             }
         }
@@ -67,16 +68,55 @@ public class PhoneBookMenu {
     private Contact createContact() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please, enter Contact Name and push enter: ");
-        String name = sc.nextLine();
-        System.out.println("Please, enter Contact PhoneNumber and push enter: ");
-        String phoneNumber = sc.nextLine();
+        String name = sc.next();
+        System.out.println("Please, enter Contact MobilePhoneNumber and push enter: ");
+        int phoneNumber = sc.nextInt();
+
+        HashMap<PhoneNumberType, Integer> map = new HashMap<>();
+        map.put(PhoneNumberType.MOBILE, phoneNumber);
+
+        System.out.println("If you wont add another number Enter yes");
+        String answer = sc.next();
+
+        if (answer.equals("yes")) {
+            System.out.println("What number your choice?");
+            System.out.println("1: WorkNumber \n2: HomeNumber \n3: SchoolNumber");
+
+            int selection = sc.nextInt();
+            if (selection == 1) {
+                System.out.println("Enter your work number:");
+            } else if (selection == 2) {
+                System.out.println("Enter your home number:");
+            } else if (selection == 3) {
+                System.out.println("Enter your school number:");
+            }
+
+            phoneNumber = sc.nextInt();
+            map.put(numberTypeSelection(selection), phoneNumber);
+        }
+
         System.out.println("If You want to add Email address enter it, otherwise push enter: ");
-        String emailAddress = sc.nextLine();
+        String emailAddress = sc.next();
+
 
         if (emailAddress == null || emailAddress.length() == 0) {
-            return new Contact(name, phoneNumber);
+            return new Contact(name, map);
         }
-        return new Contact(name, phoneNumber, emailAddress);
+        return new Contact(name, map, emailAddress);
+    }
+
+    private static PhoneNumberType numberTypeSelection(int selection) {
+        switch (selection) {
+            case 1:
+                return PhoneNumberType.WORK;
+            case 2:
+                return PhoneNumberType.HOME;
+            case 3:
+                return PhoneNumberType.SCHOOL;
+            default:
+                System.out.println("Invalid input!!!");
+        }
+        return null;
     }
 
     private int getContactID() {
@@ -96,22 +136,49 @@ public class PhoneBookMenu {
             case 1:
                 System.out.println("Enter new name: ");
                 scan = new Scanner(System.in);
-                String newName = scan.nextLine();
+                String newName = scan.next();
                 contact.setName(newName);
                 contact = phonebook.update(contact);
                 break;
             case 2:
-                System.out.println("Enter new phone number: ");
-                scan = new Scanner(System.in);
-                String newPhoneNumber = scan.nextLine();
-                contact.setPhoneNumber(newPhoneNumber);
-                contact = phonebook.update(contact);
+                System.out.println("Please, enter Contact MobilePhoneNumber and push enter: ");
+                int phoneNumber = scan.nextInt();
+
+                HashMap<PhoneNumberType, Integer> map = new HashMap<>();
+                map.put(PhoneNumberType.MOBILE, phoneNumber);
+
+                System.out.println("If you wont add another number Enter yes");
+                String answer = scan.next();
+
+                if (answer.equals("yes")) {
+                    System.out.println("What number your choice?");
+                    System.out.println("1: WorkNumber \n2: HomeNumber \n3: SchoolNumber");
+
+                    int selection = scan.nextInt();
+                    if (selection == 1) {
+                        System.out.println("Enter your work number:");
+                    } else if (selection == 2) {
+                        System.out.println("Enter your home number:");
+                    } else if (selection == 3) {
+                        System.out.println("Enter your school number:");
+                    }
+
+                    phoneNumber = scan.nextInt();
+                    map.put(numberTypeSelection(selection), phoneNumber);
+                }
+                contact.setPhoneNumber(map);
                 break;
+//                System.out.println("Enter new phone number: ");
+//                scan = new Scanner(System.in);
+//                String newPhoneNumber = scan.nextLine();
+//                contact.setPhoneNumber(newPhoneNumber);
+//                contact = phonebook.update(contact);
+//                break;
 
             case 3:
                 System.out.println("Enter new email address: ");
                 scan = new Scanner(System.in);
-                String newEmailAddress = scan.nextLine();
+                String newEmailAddress = scan.next();
                 contact.setEmailAddress(newEmailAddress);
                 contact = phonebook.update(contact);
                 break;

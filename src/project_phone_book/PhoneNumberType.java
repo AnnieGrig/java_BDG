@@ -7,6 +7,7 @@ public enum PhoneNumberType {
     SCHOOL("School");
 
     private String name;
+
     PhoneNumberType(String name) {
         this.name = name;
     }
